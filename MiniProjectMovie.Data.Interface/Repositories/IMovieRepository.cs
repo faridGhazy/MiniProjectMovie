@@ -10,5 +10,6 @@ namespace MiniProjectMovie.Data.Interface.Repositories
     public interface IMovieRepository
     {
         public Task<bool> Create(Movie model);
+        public Task<List<Movie>> GetAll();
     }
 }

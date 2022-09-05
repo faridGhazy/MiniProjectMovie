@@ -25,5 +25,11 @@ namespace MiniProjectMovie.Data.Repositories
                 " values (@id, @namaMovie, @rating, @tahun, @sutradaraId, @aktorUtamaId)", model);
             return true;
         }
+
+        public async Task<List<Movie>> GetAll()
+        {
+            var result = await _dbService.GetData<Movie>("SELECT * FROM tablemovie", new { });
+            return result;
+        }
     }
 }

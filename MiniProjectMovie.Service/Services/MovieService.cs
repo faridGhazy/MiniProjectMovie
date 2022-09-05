@@ -22,5 +22,11 @@ namespace MiniProjectMovie.Service.Services
             var result = await movieRepository.Create(movie);
             return result;
         }
+
+        public async Task<List<Movie>> GetAll()
+        {
+            var result = await movieRepository.GetAll();
+            return result;
+        }
     }
 }

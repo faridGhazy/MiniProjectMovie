@@ -10,6 +10,7 @@ namespace MiniProjectMovie.Service.Interface.Services
     public interface IMovieService
     {
         public Task<bool> Create(Movie movie);
+        public Task<List<Movie>> GetAll();
 
     }
 }

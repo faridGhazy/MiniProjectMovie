@@ -20,6 +20,11 @@ namespace MiniProjectMovie.Service.Services
             _db = new MySqlConnection(configuration.GetConnectionString("ConnectDatabaseMovie"));
         }
 
+        public async Task<List<T>> GetData<T>(string command, object param)
+        {
+            List<T> result = (await _db.QueryAsync<T>(command, param)).ToList();
+            return result;
+        }
 
         public async Task<int> ModifyData(string command, object param)
         {

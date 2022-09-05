@@ -25,5 +25,12 @@ namespace MiniProjectMovie.Controllers
             var result = await movieService.Create(model);
             return Ok(result);
         }
+
+        [HttpGet]
+        public async Task<List<Movie>> GetAll()
+        {
+            var result = await movieService.GetAll();
+            return result;
+        }
     }
 }
