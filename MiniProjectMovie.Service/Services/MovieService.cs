@@ -23,9 +23,27 @@ namespace MiniProjectMovie.Service.Services
             return result;
         }
 
-        public async Task<List<Movie>> GetAll()
+        public async Task<bool> Delete(int id)
+        {
+            var result = await movieRepository.Delete(id);
+            return result;
+        }
+
+        /*public async Task<List<Movie>> GetAll()
         {
             var result = await movieRepository.GetAll();
+            return result;
+        }*/
+
+        public async Task<List<Movie>> GetById(int id)
+        {
+            var result = await movieRepository.GetById(id);
+            return result;
+        }
+
+        public async Task<Movie> Update(Movie model)
+        {
+            var result = await movieRepository.Update(model);
             return result;
         }
     }

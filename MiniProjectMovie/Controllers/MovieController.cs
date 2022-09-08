@@ -13,7 +13,6 @@ namespace MiniProjectMovie.Controllers
     public class MovieController : Controller
     {
         private readonly IMovieService movieService;
-
         public MovieController(IMovieService movieService)
         {
             this.movieService = movieService;
@@ -26,11 +25,32 @@ namespace MiniProjectMovie.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
+        /*[HttpGet]
         public async Task<List<Movie>> GetAll()
         {
             var result = await movieService.GetAll();
             return result;
+        }*/
+
+        [HttpGet("{id:int}")]
+        public async Task<List<Movie>> GetById(int id)
+        {
+            var result = await movieService.GetById(id);
+            return result;
         }
+
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody]Movie model)
+        {
+            var result = await movieService.Update(model);
+            return Ok(result);
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<Movie>> Delete(int id)
+        {
+            var result = await movieService.Delete(id);
+            return Ok(result);
+        }        
     }
 }

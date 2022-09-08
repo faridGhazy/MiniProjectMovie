@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace MiniProjectMovie.Data.Interface.Repositories
 {
-    public interface IMovieRepository
+    public interface IGenreRepository
     {
-        //Movie
-        public Task<bool> Create(Movie model);
-        /*public Task<List<Movie>> GetAll();*/
-        public Task<List<Movie>> GetById(int id);
-        public Task<Movie> Update(Movie model);
+        public Task<bool> Create(Genre model);
+        public Task<List<Genre>> GetData();
+        public Task<Genre> Update(Genre model);
         public Task<bool> Delete(int id);
-
     }
 }

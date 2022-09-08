@@ -16,6 +16,10 @@ namespace MiniProjectMovie.Data
         public static void Register(IConfiguration configuration, IServiceCollection services)
         {
             services.AddScoped<IMovieRepository, MovieRepository>();
+            services.AddScoped<IAktorRepository, AktorRepository>();
+            services.AddScoped<IGenreRepository, GenreRepository>();
+            services.AddScoped<ISutradaraRepository, SutradaraRepository>();
+            services.AddScoped<IGenreMovieRepository, GenreMovieRepository>();
         }
     }
 }

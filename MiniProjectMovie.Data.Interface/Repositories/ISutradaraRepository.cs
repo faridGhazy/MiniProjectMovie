@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace MiniProjectMovie.Data.Interface.Repositories
 {
-    public interface IMovieRepository
+    public interface ISutradaraRepository
     {
-        //Movie
-        public Task<bool> Create(Movie model);
-        /*public Task<List<Movie>> GetAll();*/
-        public Task<List<Movie>> GetById(int id);
-        public Task<Movie> Update(Movie model);
+        public Task<bool> CreateSutradara(Sutradara model);
+        public Task<List<Sutradara>> GetSutradara();
+        public Task<Sutradara> Update(Sutradara model);
         public Task<bool> Delete(int id);
-
     }
 }

@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace MiniProjectMovie.Service.Interface.Services
 {
-    public interface IMovieService
+    public interface ISutradaraService
     {
-        public Task<bool> Create(Movie movie);
-        /*public Task<List<Movie>> GetAll();*/
-        public Task<List<Movie>> GetById(int id);
-        public Task<Movie> Update(Movie model);
+        public Task<bool> CreateSutradara(Sutradara sutradara);
+        public Task<List<Sutradara>> GetSutradara();
+        public Task<Sutradara> Update(Sutradara model);
         public Task<bool> Delete(int id);
-
     }
 }

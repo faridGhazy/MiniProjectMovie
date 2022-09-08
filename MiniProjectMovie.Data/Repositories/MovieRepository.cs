@@ -26,10 +26,38 @@ namespace MiniProjectMovie.Data.Repositories
             return true;
         }
 
-        public async Task<List<Movie>> GetAll()
+        public async Task<bool> Delete(int id)
+        {
+            await _dbService.DeleteData("DELETE FROM tablemovie where id=@id", new { id = @id });
+            return true;
+        }
+
+        //menampilkan semua data movie
+        /*public async Task<List<Movie>> GetAll()
         {
             var result = await _dbService.GetData<Movie>("SELECT * FROM tablemovie", new { });
             return result;
+        }*/
+
+        //menampilkan data movie berdasarkan id
+        public async Task<List<Movie>> GetById(int id)
+        {
+            var result = await _dbService.GetData<Movie>("SELECT * FROM tablemovie where id=@id", new { id=@id });
+            //ingin memunculkan data movie yang terhubung ke table lain.... belum berhasil
+            /*var result = await _dbService.GetData<Movie>("SELECT m.id, m.namaMovie, m.rating, m.tahun, s.namaSutradara, " +
+                "a.namaAktor FROM tablemovie m " +
+                "JOIN tablesutradara s on m.sutradaraId = s.id " +
+                "JOIN tableaktor a on m.aktorUtamaId = a.id " +
+                "WHERE m.id=@id", new { id = @id });*/
+            return result;
+        }
+
+        public async Task<Movie> Update(Movie model)
+        {
+            await _dbService.ModifyData("UPDATE tablemovie " +
+                "SET namaMovie=@namaMovie, rating=@rating, tahun=@tahun, sutradaraId=@sutradaraId, " +
+                "aktorUtamaId=@aktorUtamaId WHERE id=@id", model);
+            return model;
         }
     }
 }

@@ -15,6 +15,10 @@ namespace MiniProjectMovie.Service
         public static void Register(IConfiguration iconfiguration, IServiceCollection services)
         {
             services.AddScoped<IMovieService, MovieService>();
+            services.AddScoped<IAktorService, AktorService>();
+            services.AddScoped<IGenreService, GenreService>();
+            services.AddScoped<ISutradaraService, SutradaraService>();
+            services.AddScoped<IGenreMovieService, GenreMovieService>();
             services.AddScoped<IDbService, DbService>();
         }
     }
