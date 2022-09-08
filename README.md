@@ -3,7 +3,17 @@ Membuat Mini Project
 
 1. ERD MiniProject Movie
 
-![image](https://user-images.githubusercontent.com/63331958/188534051-d217df30-cc09-4e3f-9a72-d516d51195d3.png)
+![image](https://user-images.githubusercontent.com/63331958/189197374-f193f213-ffca-47f8-96cb-ea5122d9a0e2.png)
+
+Penjelasan :
+
+  a. Satu sutradara Bisa membuat banyak movie.
+  
+  b. Satu Aktor Utama bisa bermain di banyak movie.
+  
+  c. Satu movie bisa memiliki banyak genre.
+  
+  d. Satu genre bisa memiliki banyak movie.
 
 2. API untuk insert data per Movie 
 
