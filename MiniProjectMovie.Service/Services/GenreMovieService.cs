@@ -56,7 +56,7 @@ namespace MiniProjectMovie.Service.Services
 
         public async Task<List<AllData>> GetDataPage(int page)
         {
-            int offset = (page-1) * 5;
+            int offset = (page-1) * 10;
             var result = await genreMovieRepository.GetDataPage(offset);
             return result;
         }

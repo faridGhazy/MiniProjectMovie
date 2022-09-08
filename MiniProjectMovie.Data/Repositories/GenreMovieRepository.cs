@@ -77,7 +77,7 @@ namespace MiniProjectMovie.Data.Repositories
                 "join tableaktor a on m.aktorUtamaId = a.id " +                
                 "join tablegenre g on gm.genreId = g.id " +
                 "group by gm.movieId ORDER BY gm.movieId ASC " +
-                "limit 5 offset @page", new { page=@page });
+                "limit 10 offset @page", new { page=@page });
             return result;
         }
 
