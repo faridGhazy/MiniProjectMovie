@@ -1,4 +1,4 @@
-# MiniProjectMovie
+# MiniProjectMovieKodehive
 Membuat Mini Project
 
 1. ERD MiniProject Movie
